@@ -1,0 +1,25 @@
+<h1>User APP</h1>
+
+<nav>
+  <a routerLink="/">Dashboard</a>&nbsp; &nbsp;
+  <a routerLink="/add-user">Add User</a>&nbsp; &nbsp;
+  <a routerLink="/mobiles">Mobile Data</a> &nbsp; &nbsp;
+  <a routerLink="/practice">Practice Form</a>
+</nav>
+
+<!-- <div class="container">
+  <div class="list">
+    @for (user of users; track user.id) {
+      <app-user-card [user]="user" (selectUser)="onSelect($event)"></app-user-card>
+    }
+  </div>
+  <div class="details">
+    @if(selectedUser) {
+      <app-user-details [user]="selectedUser"></app-user-details>
+    } @else {
+      <p>Select a User</p>
+    }
+  </div>
+</div> -->
+
+<router-outlet />

@@ -1,0 +1,13 @@
+<h2>Add User</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input placeholder="Name" formControlName="name" />
+  <input placeholder="Email" formControlName="email" />
+
+  <label>
+    <input type="checkbox" formControlName="active" />
+    Active
+  </label>
+
+  <button type="submit" (click)="submit()">Add</button>
+</form>

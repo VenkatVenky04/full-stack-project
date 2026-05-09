@@ -1,0 +1,12 @@
+<div class="card">
+    <h3>{{user.name}}</h3>
+    <p>{{user.email}}</p>
+
+    @if (user.active) {
+<span class="active">Active</span>
+    } @else {
+<span class="inactive">Inactive</span>
+    }
+
+    <button (click)="select()">View Details</button>
+</div>

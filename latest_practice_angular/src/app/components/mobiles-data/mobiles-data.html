@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Mobile Management</h2>
+
+    <form [formGroup]="editForm">
+        <input type="hidden" formControlName="id">
+
+        <input type="text" formControlName="name" placeholder="Enter Mobile Name" required>
+        <input type="number" formControlName="prize" placeholder="Enter the Prize" required>
+        <input type="text" formControlName="ram" placeholder="Enter the RAM" required>
+        <input type="text" formControlName="storage" placeholder="Enter the Storage" required>
+
+        <button type="submit" (click)="saveMobile(editForm)">{{ editMode ? 'Update' : 'Add' }}</button>
+        <button type="button" (click)="resetForm()">Clear</button>
+    </form>
+
+    <hr />
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Prize</th>
+                <th>Ram</th>
+                <th>Storage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (mobiles of mobiles; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{mobiles.name}}</td>
+                <td>{{mobiles.prize}}</td>
+                <td>{{mobiles.ram}}</td>
+                <td>{{mobiles.storage}}</td>
+                <td>
+                    <button (click)="editMobile(mobiles)">Edit</button>
+                    <button (click)="deleteMobile(mobiles.id)">Delete</button>
+                </td>
+            </tr>
+        }   
+        </tbody>
+    </table>
+</div>

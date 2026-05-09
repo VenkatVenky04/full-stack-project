@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.list {
+  width: 50%;
+}
+
+.details {
+  width: 50%;
+  border-left: 1px solid #ccc;
+  padding: 10px;
+}

@@ -1,0 +1,23 @@
+<input type="text" placeholder="Search user..." (input)="search.set($any($event.target).value)" />
+
+<div class="dashboard_container">
+    <div class="user_card">
+        @for (user of filteredUsers(); track user.id) {
+        <app-user-card [user]="user" (selectUser)="onSelect($event)"></app-user-card>
+        }
+    </div>
+
+    @if (selectedUser) {
+    <div class="details">
+        <h2>{{ selectedUser.name }}</h2>
+        <p>{{ selectedUser.email }}</p>
+
+        <p><b>Status: </b> @if (selectedUser.active) {
+            <span class="active">Active</span>
+            } @else {
+            <span class="inactive">Inactive</span>
+            }
+        </p>
+    </div>
+    }
+</div>

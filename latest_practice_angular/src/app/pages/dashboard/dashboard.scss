@@ -1,0 +1,16 @@
+.dashboard_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.details {
+margin-left: 20px;
+}
+.active { color: green;}
+.inactive { color: red;}

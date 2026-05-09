@@ -1,0 +1,14 @@
+﻿# Angular Frontend
+latest_practice_angular/node_modules
+latest_practice_angular/dist
+latest_practice_angular/.angular
+latest_practice_angular/.vscode
+
+# Backend
+restAPI/node_modules
+restAPI/dist
+
+# General
+.env
+*.log
+.DS_Store
