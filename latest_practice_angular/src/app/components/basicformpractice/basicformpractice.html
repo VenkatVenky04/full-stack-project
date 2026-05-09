@@ -1,1 +1,37 @@
-<p>basicformpractice works!</p>
+<section>
+    <div>
+        <form [formGroup]="basicForm">
+            <label>Name</label>
+            <input type="text" placeholder="Enter Your Name" formControlName="name">
+            <label>Email</label>
+            <input type="email" placeholder="Enter Your Mail Id" formControlName="email">
+            <label>Mobile Number</label>
+            <input type="number" placeholder="Enter Mobile Number" formControlName="number">
+
+            <input type="submit" (click)="onSubmit()">
+        </form>
+    </div>
+
+    <br><br><br>
+    
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Number</td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (formData of data; track $index) {
+                <tr>
+                    <td>{{formData.name}}</td>
+                    <td>{{formData.email}}</td>
+                    <td>{{formData.number}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</section>
