@@ -1,45 +1,54 @@
-<section>
-    <div class="main_page">
+<section class="main_page">
+    <div>
         <form #tdform="ngForm" (ngSubmit)="onSubmit(tdform)">
-            <label>First Name</label>
-            <input type="text" name="fname" ngModel><br/>
-            <label>Last Name</label>
-            <input type="text" name="lname" ngModel><br/>
-            <label>Email</label>
-            <input type="email" name="email" ngModel><br/>
-            <label>Mobile Number</label>
-            <input type="number" name="number" ngModel><br/>
-            <label>School Name</label>
-            <input type="text" name="school" ngModel><br/>
+            <input type="hidden" name="id" ngModel>
 
-            <button type="submit" [disabled]="tdform.invalid">Submit</button>
+            <label>First Name: </label>
+            <input type="text" name="fname" ngModel #fname="ngModel"><br/>
+            <label>Last Name: </label>
+            <input type="text" name="lname" ngModel #lname="ngModel"><br/>
+            <label>Email: </label>
+            <input type="email" name="email" ngModel #email="ngModel"><br/>
+            <label>Mobile Number: </label>
+            <input type="number" name="number" ngModel #number="ngModel"><br/>
+            <label>School Name: </label>
+            <input type="text" name="school" ngModel #school="ngModel"><br/>
+
+            <button type="submit" [disabled]="tdform.invalid">{{editMode ? "Update" : "Submit"}}</button>
         </form>
     </div>
 
     <br><br><br>
 
-    <div>
-        <table>
-            <thead>
+   <div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>School Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (formItem of data; track $index) {
                 <tr>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Email</td>
-                    <td>Mobile Number</td>
-                    <td>School Name</td>
-                </tr>
-            </thead>
-            <tbody>
-                @for (formItem of data; track $index) {
-                <tr>
-                    <td>{{formItem.fname}}</td>
-                    <td>{{formItem.lname}}</td>
-                    <td>{{formItem.email}}</td>
-                    <td>{{formItem.number}}</td>
-                    <td>{{formItem.school}}</td>
+                    <td>{{ formItem.fname }}</td>
+                    <td>{{ formItem.lname }}</td>
+                    <td>{{ formItem.email }}</td>
+                    <td>{{ formItem.number }}</td>
+                    <td>{{ formItem.school }}</td>
+                    <td>
+                        <button (click)="onUpdate(formItem, tdform)">Update</button>
+                        <button (click)="onDelete(formItem.id)">Delete</button>
+                    </td>
                 </tr>
             }
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+
+    </table>
+</div>
 </section>

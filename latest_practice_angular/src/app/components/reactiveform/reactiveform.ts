@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-basicformpractice',
+  selector: 'app-reactiveform',
   imports: [ReactiveFormsModule],
-  templateUrl: './basicformpractice.html',
-  styleUrl: './basicformpractice.scss',
+  templateUrl: './reactiveform.html',
+  styleUrl: './reactiveform.scss',
 })
-export class Basicformpractice {
+export class reactiveform {
 
   constructor(private fb: FormBuilder) {}
   basicForm : any;

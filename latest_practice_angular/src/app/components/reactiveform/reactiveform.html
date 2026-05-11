@@ -1,12 +1,12 @@
-<section class="container">
+<section class="main_page">
     <div>
         <form [formGroup]="basicForm">
-            <label>Name</label>
-            <input type="text" placeholder="Enter Your Name" formControlName="name">
-            <label>Email</label>
-            <input type="email" placeholder="Enter Your Mail Id" formControlName="email">
-            <label>Mobile Number</label>
-            <input type="number" placeholder="Enter Mobile Number" formControlName="number">
+            <label>Name: </label>
+            <input type="text" placeholder="Enter Your Name" formControlName="name"><br />
+            <label>Email: </label>
+            <input type="email" placeholder="Enter Your Mail Id" formControlName="email"><br />
+            <label>Mobile Number: </label>
+            <input type="number" placeholder="Enter Mobile Number" formControlName="number"><br />
 
             <input type="submit" (click)="onSubmit()">
         </form>
