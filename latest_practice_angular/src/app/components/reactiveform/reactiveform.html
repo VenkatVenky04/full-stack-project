@@ -1,6 +1,7 @@
 <section class="main_page">
     <div>
         <form [formGroup]="basicForm">
+            <input type="hidden" formControlName="id">
             <label>Name: </label>
             <input type="text" placeholder="Enter Your Name" formControlName="name"><br />
             <label>Email: </label>
@@ -8,19 +9,20 @@
             <label>Mobile Number: </label>
             <input type="number" placeholder="Enter Mobile Number" formControlName="number"><br />
 
-            <input type="submit" (click)="onSubmit()">
+            <button type="submit" (click)="onSubmit()">{{this.editMode ? 'Update' : 'Submit'}}</button>
         </form>
     </div>
 
     <br><br><br>
 
     <div>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <td>Name</td>
                     <td>Email</td>
                     <td>Number</td>
+                    <td>Actions</td>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +31,10 @@
                     <td>{{formData.name}}</td>
                     <td>{{formData.email}}</td>
                     <td>{{formData.number}}</td>
+                    <td>
+                        <button type="submit" (click)="onUpdate(formData.id)">Update</button>
+                        <button type="submit" (click)="onDelete(formData.id)">Delete</button>
+                    </td>
                 </tr>
             }
             </tbody>
